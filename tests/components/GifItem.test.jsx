@@ -14,14 +14,13 @@ describe("Testing GifItem Component", () => {
     render(<GifItem title={title} url={url} />);
     // screen.debug();
     // expect(screen.getByRole('img').src).toBe( url );
-    const { url, alt } = screen.getByRole("img");
+    const { url, alt } = screen.getByRole('img');
     expect(url).toBe(url);
     expect(alt).toBe(title);
   });
 
   test('should show the title in the component', () => {
     render(<GifItem title={title} url={url} />);
-    expect( screen.getByRole('title')).toBeTruthy();
-    
+    expect(screen.getByText(title)).toBeTruthy();
    })
 });
